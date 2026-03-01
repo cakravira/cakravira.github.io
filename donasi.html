@@ -1,121 +1,138 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PPKN25 Payment QRIS</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PPKN25 Payment QRIS</title>
 
-    <style>
-        /* IMPORT FONT */
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
 
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Poppins', sans-serif;
-            background: #0e0e0e;
-            color: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #0e0e0e;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
 
-        .container {
-            text-align: center;
-            padding: 40px 30px;
-            max-width: 380px;
-            width: 100%;
-            border: 1px solid #222;
-            border-radius: 14px;
-            background: #1a1a1a;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
-        }
+.container {
+    text-align: center;
+    padding: 40px 30px;
+    max-width: 380px;
+    width: 100%;
+    border: 1px solid #222;
+    border-radius: 14px;
+    background: #1a1a1a;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
+}
 
-        h1 {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 6px;
-            color: #ff3f3f;
-        }
+h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #ff3f3f;
+}
 
-        p.sub {
-            font-size: 15px;
-            font-weight: 400;
-            color: #ccc;
-            margin-bottom: 18px;
-        }
+.qris-box {
+    margin: 20px auto;
+    width: 100%;
+    max-width: 300px;
+    padding: 6px;
+    background: #000;
+    border-radius: 12px;
+    border: 2px solid #ff3f3f;
+}
 
-        .qris-box {
-            margin: 20px auto;
-            width: 100%;
-            max-width: 300px;
-            padding: 6px;
-            background: #000;
-            border-radius: 12px;
-            border: 2px solid #ff3f3f;
-        }
+.qris-box img {
+    width: 100%;
+    border-radius: 8px;
+}
 
-        .qris-box img {
-            width: 100%;
-            display: block;
-            border-radius: 8px;
-        }
+.info {
+    margin-top: 14px;
+    font-size: 14px;
+    color: #ddd;
+    font-weight: 500;
+}
 
-        .info {
-            margin-top: 14px;
-            font-size: 14px;
-            color: #ddd;
-            font-weight: 500;
-        }
+.btn {
+    display: block;
+    margin: 15px auto 0;
+    text-decoration: none;
+    font-size: 15px;
+    padding: 12px;
+    border-radius: 8px;
+    background: #ff3f3f;
+    color: #fff;
+    font-weight: 600;
+    transition: 0.3s ease;
+    width: 100%;
+    max-width: 260px;
+}
 
-        .btn {
-            display: inline-block;
-            margin-top: 26px;
-            text-decoration: none;
-            font-size: 15px;
-            padding: 12px 24px;
-            border-radius: 8px;
-            background: #ff3f3f;
-            color: #fff;
-            font-weight: 600;
-            transition: 0.3s ease;
-        }
+.btn:hover {
+    background: #ff5959;
+    transform: translateY(-2px);
+}
 
-        .btn:hover {
-            background: #ff5959;
-            transform: translateY(-2px);
-        }
+/* tombol secondary */
+.btn-secondary {
+    background: transparent;
+    border: 1px solid #ff3f3f;
+}
 
-        .footer {
-            margin-top: 28px;
-            font-size: 12px;
-            color: #666;
-        }
-    </style>
+.btn-secondary:hover {
+    background: #ff3f3f;
+}
+
+.footer {
+    margin-top: 28px;
+    font-size: 12px;
+    color: #666;
+}
+</style>
 </head>
 <body>
 
-    <div class="container">
+<div class="container">
 
-        <h1>PPKN25 PAYMENT</h1>
-        <p class="sub"></p>
+    <h1>PPKN25 PAYMENT</h1>
 
-        <div class="qris-box">
-            <img src="Qris.jpg" alt="QRIS PPKN25">
-        </div>
-
-        <div class="info">
-            NMID: <strong>ID1026489097240</strong>
-        </div>
-
-        <a href="https://wa.me/6283841425951?text=saya+sudah+donasi❤" class="btn">Konfirmasi</a>
-
-        <div class="footer">
-            Terima Kasih atas Donasi nya Yang di Berikan❤
-        </div>
-
+    <div class="qris-box">
+        <img src="Qris.jpg" alt="QRIS PPKN25" id="qrisImage">
     </div>
+
+    <div class="info">
+        NMID: <strong>ID1026489097240</strong>
+    </div>
+
+    <!-- Download QR -->
+    <a href="Qris.jpg" download class="btn btn-secondary">
+        Download QRIS
+    </a>
+
+    <!-- Konfirmasi -->
+    <a href="https://wa.me/6283841425951?text=Saya%20sudah%20donasi%20🙏"
+       class="btn">
+        Konfirmasi
+    </a>
+
+    <!-- Narahubung -->
+    <a href="https://wa.me/6285137676829"
+       class="btn btn-secondary">
+        Narahubung
+    </a>
+
+    <div class="footer">
+        Terima Kasih atas Donasi yang diberikan ❤
+    </div>
+
+</div>
 
 </body>
 </html>
